@@ -1,0 +1,101 @@
+=== Workout split agent — POC ===
+Profile: Sample profile — POC only, fake male profile, not real lifts
+Level: intermediate, sex: male, age: 24, bodyweight: 185 lb, height: 72 in
+Body fat %: not given — optional, agent works without it
+Primary goal: hypertrophy, secondary: none
+Days/week: 5, minutes/session: 45, equipment: barbell, dumbbell, machine, cable, bodyweight
+Active rest: at least 2 days, preferred: Sunday, Wednesday
+Include list: ['Hip Thrust'] | Disliked: ['Front Squat'] | Avoid movements: none | Injuries: none
+Cardio substitution: disliked ['running'] -> preferred stairmaster (same duration / intensity zone, trace shows the swap)
+Free-text preferences (open, not on the fixed list): ['I prefer evening workouts', 'I want core at the end of every workout']
+  Unhandled preference: free text is retained but not parsed or enforced in Week 1.
+
+1RM squat: Epley from 185 lb x 8 reps = 185 * (1 + 8/30) = 234.3 lb
+1RM bench: Epley from 135 lb x 8 reps = 135 * (1 + 8/30) = 171.0 lb
+1RM deadlift: Epley from 225 lb x 5 reps = 225 * (1 + 5/30) = 262.5 lb
+1RM ohp: Epley from 95 lb x 8 reps = 95 * (1 + 8/30) = 120.3 lb
+1RM row: Epley from 135 lb x 8 reps = 135 * (1 + 8/30) = 171.0 lb
+1RM hip_thrust: Epley from 225 lb x 10 reps = 225 * (1 + 10/30) = 300.0 lb
+Estimated 1RMs: {'squat': 234.3, 'bench': 171.0, 'deadlift': 262.5, 'ohp': 120.3, 'row': 171.0, 'hip_thrust': 300.0}
+
+Goal mapping [hypertrophy]: 67-85% of 1RM, 8-12 reps, 90s rest, tempo: controlled, moderate rest, style: compound + isolation
+Using midpoint 76.0% for starting weights (inside the band, not at the top).
+
+Exercise DB loaded: 55 exercises (curated POC subset)
+Split for 5 days/week: Push / Pull / Legs / Upper / Lower
+
+--- Push ---
+  SEARCH: 18 eligible candidates; required primary muscles: ['chest', 'shoulders', 'triceps']; time limit: 45 min
+  Objective: minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names
+  Evaluated 816 combinations; 192 feasible at minimum size
+  Search status: feasible
+  Selected: Bench Press, Dumbbell Shoulder Press, Machine Tricep Extension
+  Bench Press: 3x8-12, 130.0 lb = 171.0 lb bench 1RM x 1.0 x 0.76 goal% -> rounded to 130.0
+  Dumbbell Shoulder Press: 3x8-12, 32.5 lb per hand = 120.3 lb ohp 1RM x 0.35 x 0.76 goal% -> rounded to 32.5
+  Machine Tricep Extension: 3x8-12, 25.0 lb (level starter, RPE check)
+  Estimated session time: ~22.5 min (target 45 min)
+
+--- Pull ---
+  SEARCH: 12 eligible candidates; required primary muscles: ['back', 'biceps']; time limit: 45 min
+  Objective: minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names
+  Evaluated 66 combinations; 27 feasible at minimum size
+  Search status: feasible
+  Selected: Barbell Row, Bicep Curl
+  Barbell Row: 3x8-12, 130.0 lb = 171.0 lb row 1RM x 1.0 x 0.76 goal% -> rounded to 130.0
+  Bicep Curl: 3x8-12, 15.0 lb (level starter, RPE check)
+  Estimated session time: ~15.0 min (target 45 min)
+
+--- Legs ---
+  SEARCH: 19 eligible candidates; required primary muscles: ['calves', 'glutes', 'hamstrings', 'quads']; time limit: 45 min
+  Objective: minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names
+  Evaluated 3876 combinations; 360 feasible at minimum size
+  Search status: feasible
+  Selected: Back Squat, Bodyweight Calf Raise, Conventional Deadlift, Hip Thrust
+  Back Squat: 3x8-12, 177.5 lb = 234.3 lb squat 1RM x 1.0 x 0.76 goal% -> rounded to 177.5
+  Bodyweight Calf Raise: 3x8-12, 0.0 lb (level starter, RPE check)
+  Conventional Deadlift: 3x8-12, 200.0 lb = 262.5 lb deadlift 1RM x 1.0 x 0.76 goal% -> rounded to 200.0
+  Hip Thrust: 3x8-12, 227.5 lb = 300.0 lb hip_thrust 1RM x 1.0 x 0.76 goal% -> rounded to 227.5
+  Estimated session time: ~30.0 min (target 45 min)
+
+--- Upper ---
+  SEARCH: 30 eligible candidates; required primary muscles: ['back', 'biceps', 'chest', 'shoulders', 'triceps']; time limit: 45 min
+  Objective: minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names
+  Evaluated 142506 combinations; 5184 feasible at minimum size
+  Search status: feasible
+  Selected: Barbell Row, Bench Press, Bicep Curl, Dumbbell Shoulder Press, Machine Tricep Extension
+  Barbell Row: 3x8-12, 130.0 lb = 171.0 lb row 1RM x 1.0 x 0.76 goal% -> rounded to 130.0
+  Bench Press: 3x8-12, 130.0 lb = 171.0 lb bench 1RM x 1.0 x 0.76 goal% -> rounded to 130.0
+  Bicep Curl: 3x8-12, 15.0 lb (level starter, RPE check)
+  Dumbbell Shoulder Press: 3x8-12, 32.5 lb per hand = 120.3 lb ohp 1RM x 0.35 x 0.76 goal% -> rounded to 32.5
+  Machine Tricep Extension: 3x8-12, 25.0 lb (level starter, RPE check)
+  Estimated session time: ~37.5 min (target 45 min)
+
+--- Lower ---
+  SEARCH: 19 eligible candidates; required primary muscles: ['calves', 'glutes', 'hamstrings', 'quads']; time limit: 45 min
+  Objective: minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names
+  Evaluated 3876 combinations; 360 feasible at minimum size
+  Search status: feasible
+  Selected: Back Squat, Bodyweight Calf Raise, Conventional Deadlift, Hip Thrust
+  Back Squat: 3x8-12, 177.5 lb = 234.3 lb squat 1RM x 1.0 x 0.76 goal% -> rounded to 177.5
+  Bodyweight Calf Raise: 3x8-12, 0.0 lb (level starter, RPE check)
+  Conventional Deadlift: 3x8-12, 200.0 lb = 262.5 lb deadlift 1RM x 1.0 x 0.76 goal% -> rounded to 200.0
+  Hip Thrust: 3x8-12, 227.5 lb = 300.0 lb hip_thrust 1RM x 1.0 x 0.76 goal% -> rounded to 227.5
+  Estimated session time: ~30.0 min (target 45 min)
+
+Include check: Hip Thrust present in split? True
+Muscle coverage in POC split: ['back', 'biceps', 'calves', 'chest', 'glutes', 'hamstrings', 'quads', 'shoulders', 'triceps']
+All major muscles covered? chest/back/shoulders/quads/hamstrings/glutes in set: True
+Overall plan status: feasible
+Average feasible-session time: ~27.0 min vs target 45 min
+
+Weekly calendar (illustrative placement; recovery is not validated):
+  Monday: Push — feasible, estimated minutes: 22.5
+  Tuesday: Pull — feasible, estimated minutes: 15.0
+  Wednesday: ACTIVE REST — stairmaster preferred, light intensity, 20-30 min (not a hard workout), plus mobility. Gym day, not home.
+  Thursday: Legs — feasible, estimated minutes: 30.0
+  Friday: Upper — feasible, estimated minutes: 37.5
+  Saturday: Lower — feasible, estimated minutes: 30.0
+  Sunday: ACTIVE REST — HOME ONLY, do not leave house. Light: mobility / yoga / light dumbbell circuit / stretching, 20-45 min, low intensity. NO stairmaster (stairmaster is at gym). Home equipment only: basic dumbbells + bodyweight, RPE starters.
+
+Progression note (Week 2, not applied in POC): if all reps completed with RPE <=8, +2.5-5 lb next week; if failed last set, -10% and re-estimate 1RM; if pain reported, stop that exercise and flag — agent does not diagnose.
+=== POC complete ===

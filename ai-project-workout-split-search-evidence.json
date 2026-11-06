@@ -1,0 +1,179 @@
+[
+  {
+    "input": {
+      "name": "dumbbells_30_minutes",
+      "equipment": [
+        "dumbbell"
+      ],
+      "minutes": 30,
+      "required": [
+        "chest",
+        "back",
+        "shoulders"
+      ],
+      "disliked": [
+        "Dumbbell Fly"
+      ],
+      "avoided": [
+        "Dumbbell Shoulder Press"
+      ],
+      "preferred": [
+        "Dumbbell Row"
+      ],
+      "expected": "feasible"
+    },
+    "result": {
+      "strategy": "exhaustive constraint search",
+      "required_muscles": [
+        "back",
+        "chest",
+        "shoulders"
+      ],
+      "coverage_rule": "at least one exercise per required primary muscle",
+      "time_limit_minutes": 30,
+      "minutes_per_exercise": 7.5,
+      "candidate_count": 6,
+      "combinations_evaluated": 20,
+      "feasible_combinations_at_minimum_size": 6,
+      "objective": "minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names",
+      "selected_exercises": [
+        "Dumbbell Bench Press",
+        "Dumbbell Row",
+        "Front Raise"
+      ],
+      "status": "feasible",
+      "estimated_minutes": 22.5,
+      "preferred_exercises_selected": 1,
+      "compound_exercises_selected": 2
+    },
+    "checks": "passed"
+  },
+  {
+    "input": {
+      "name": "insufficient_time",
+      "equipment": [
+        "dumbbell"
+      ],
+      "minutes": 15,
+      "required": [
+        "chest",
+        "back",
+        "shoulders"
+      ],
+      "expected": "infeasible"
+    },
+    "result": {
+      "strategy": "exhaustive constraint search",
+      "required_muscles": [
+        "back",
+        "chest",
+        "shoulders"
+      ],
+      "coverage_rule": "at least one exercise per required primary muscle",
+      "time_limit_minutes": 15,
+      "minutes_per_exercise": 7.5,
+      "candidate_count": 8,
+      "combinations_evaluated": 0,
+      "feasible_combinations_at_minimum_size": 0,
+      "objective": "minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names",
+      "selected_exercises": [],
+      "status": "infeasible",
+      "reason": "Coverage requires at least 3 exercises (22.5 estimated minutes); time limit is 15 minutes."
+    },
+    "checks": "passed"
+  },
+  {
+    "input": {
+      "name": "missing_equipment_for_primary_coverage",
+      "equipment": [
+        "bodyweight"
+      ],
+      "minutes": 45,
+      "required": [
+        "chest",
+        "back",
+        "shoulders"
+      ],
+      "expected": "infeasible"
+    },
+    "result": {
+      "strategy": "exhaustive constraint search",
+      "required_muscles": [
+        "back",
+        "chest",
+        "shoulders"
+      ],
+      "coverage_rule": "at least one exercise per required primary muscle",
+      "time_limit_minutes": 45,
+      "minutes_per_exercise": 7.5,
+      "candidate_count": 2,
+      "combinations_evaluated": 0,
+      "feasible_combinations_at_minimum_size": 0,
+      "objective": "minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names",
+      "selected_exercises": [],
+      "status": "infeasible",
+      "reason": "No eligible exercise for: shoulders"
+    },
+    "checks": "passed"
+  },
+  {
+    "input": {
+      "name": "objective_oracle",
+      "exercises": [
+        {
+          "name": "A",
+          "primary_muscle": "chest",
+          "equipment": "dumbbell",
+          "type": "compound"
+        },
+        {
+          "name": "B",
+          "primary_muscle": "chest",
+          "equipment": "dumbbell",
+          "type": "isolation"
+        },
+        {
+          "name": "C",
+          "primary_muscle": "back",
+          "equipment": "dumbbell",
+          "type": "compound"
+        }
+      ],
+      "required": [
+        "chest",
+        "back"
+      ],
+      "equipment": [
+        "dumbbell"
+      ],
+      "minutes": 15,
+      "rest_sec": 90,
+      "preferred": [
+        "B"
+      ]
+    },
+    "result": {
+      "strategy": "exhaustive constraint search",
+      "required_muscles": [
+        "back",
+        "chest"
+      ],
+      "coverage_rule": "at least one exercise per required primary muscle",
+      "time_limit_minutes": 15,
+      "minutes_per_exercise": 7.5,
+      "candidate_count": 3,
+      "combinations_evaluated": 3,
+      "feasible_combinations_at_minimum_size": 2,
+      "objective": "minimize exercise count; maximize preferred exercises; maximize compound exercises; break ties by exercise names",
+      "selected_exercises": [
+        "B",
+        "C"
+      ],
+      "status": "feasible",
+      "estimated_minutes": 15.0,
+      "preferred_exercises_selected": 1,
+      "compound_exercises_selected": 1
+    },
+    "checks": "passed"
+  }
+]

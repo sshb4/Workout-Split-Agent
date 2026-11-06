@@ -1,0 +1,56 @@
+name,primary_muscle,secondary_muscles,equipment,type,split_day,reference_lift,weight_fraction,level_starter_lb
+Back Squat,quads,glutes;hamstrings,barbell,compound,lower,squat,1.0,
+Front Squat,quads,glutes,barbell,compound,lower,squat,0.8,
+Leg Press,quads,glutes,machine,compound,lower,squat,1.2,
+Goblet Squat,quads,glutes,dumbbell,compound,lower,squat,0.35,
+Leg Extension,quads,,machine,isolation,lower,,,60
+Leg Curl,hamstrings,glutes,machine,isolation,lower,,,50
+Romanian Deadlift,hamstrings,glutes,barbell,compound,lower,deadlift,0.6,
+Conventional Deadlift,hamstrings,glutes;back,barbell,compound,lower,deadlift,1.0,
+Hip Thrust,glutes,hamstrings,barbell,compound,lower,hip_thrust,1.0,
+Glute Bridge,glutes,hamstrings,bodyweight,compound,lower,,,
+Calf Raise,calves,,machine,isolation,lower,,,80
+Bench Press,chest,triceps;shoulders,barbell,compound,upper,bench,1.0,
+Dumbbell Bench Press,chest,triceps;shoulders,dumbbell,compound,upper,bench,0.35,
+Incline Bench Press,chest,shoulders;triceps,barbell,compound,upper,bench,0.85,
+Incline Dumbbell Press,chest,shoulders,dumbbell,compound,upper,bench,0.3,
+Chest Fly,chest,,cable,isolation,upper,,,
+Push-Up,chest,triceps;shoulders,bodyweight,compound,upper,,,
+Overhead Press,shoulders,triceps,barbell,compound,upper,ohp,1.0,
+Dumbbell Shoulder Press,shoulders,triceps,dumbbell,compound,upper,ohp,0.35,
+Lateral Raise,shoulders,,dumbbell,isolation,upper,,,15
+Front Raise,shoulders,,dumbbell,isolation,upper,,,10
+Barbell Row,back,biceps,barbell,compound,upper,row,1.0,
+Dumbbell Row,back,biceps,dumbbell,compound,upper,row,0.35,
+Lat Pulldown,back,biceps,cable,compound,upper,row,0.7,
+Seated Cable Row,back,biceps,cable,compound,upper,row,0.7,
+Pull-Up,back,biceps,bodyweight,compound,upper,,,
+Face Pull,back,shoulders,cable,isolation,upper,,,25
+Bicep Curl,biceps,forearms,dumbbell,isolation,upper,,,15
+Hammer Curl,biceps,forearms,dumbbell,isolation,upper,,,15
+Tricep Pushdown,triceps,,cable,isolation,upper,,,25
+Overhead Tricep Extension,triceps,,dumbbell,isolation,upper,,,15
+Skull Crusher,triceps,,barbell,isolation,upper,,,30
+Plank,core,,bodyweight,isolation,core,,,
+Dead Bug,core,,bodyweight,isolation,core,,,
+Hanging Leg Raise,core,hip flexors,bodyweight,isolation,core,,,
+Cable Crunch,core,,cable,isolation,core,,,30
+Russian Twist,core,obliques,dumbbell,isolation,core,,,15
+Walking Lunge,quads,glutes,dumbbell,compound,lower,squat,0.3,
+Bulgarian Split Squat,quads,glutes,dumbbell,compound,lower,squat,0.3,
+Step-Up,quads,glutes,dumbbell,compound,lower,squat,0.3,
+Good Morning,hamstrings,glutes,barbell,compound,lower,deadlift,0.4,
+Seated Leg Press,quads,glutes,machine,compound,lower,squat,1.0,
+Machine Chest Press,chest,triceps,machine,compound,upper,bench,0.8,
+Machine Shoulder Press,shoulders,triceps,machine,compound,upper,ohp,0.8,
+Cable Row,back,biceps,cable,compound,upper,row,0.7,
+Dumbbell Fly,chest,,dumbbell,isolation,upper,,,15
+Reverse Fly,shoulders,back,dumbbell,isolation,upper,,,10
+Machine Row,back,biceps,machine,compound,upper,row,0.7,
+Machine Lat Pulldown,back,biceps,machine,compound,upper,row,0.7,
+Machine Bicep Curl,biceps,forearms,machine,isolation,upper,,,20
+Machine Tricep Extension,triceps,,machine,isolation,upper,,,25
+Machine Glute Kickback,glutes,hamstrings,machine,isolation,lower,,,50
+Dumbbell Romanian Deadlift,hamstrings,glutes,dumbbell,compound,lower,deadlift,0.3,
+Dumbbell Calf Raise,calves,,dumbbell,isolation,lower,,,20
+Bodyweight Calf Raise,calves,,bodyweight,isolation,lower,,,0
